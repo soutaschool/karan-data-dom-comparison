@@ -1,5 +1,11 @@
 # Deep understand HTML DOM
 
+## How it works
+
+```bash
+npm run dev
+```
+
 ## Add a large amount of DOM
 
 **DocumentFragment** can be used.
@@ -7,8 +13,8 @@ This allows elements to be stored once in memory and displayed all at once, impr
 
 ```mermaid
 flowchart TB
-    Start[Start] --> CreateElems[Create Elements]
-    CreateElems --> ChooseMethod{Choose Method}
+    Start[Start] --> CreateElements[Create Elements]
+    CreateElements --> ChooseMethod{Choose Method}
     ChooseMethod -->|Normal| Normal[Normal Operation]
     ChooseMethod -->|Advanced| Advanced[Advanced Operation]
     Normal --> AppendEach[Append Each Element]

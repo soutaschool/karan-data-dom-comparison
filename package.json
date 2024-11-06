@@ -1,0 +1,26 @@
+{
+	"name": "karan-html-dom-deep-understand",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"build:css": "postcss src/styles.css -o dist/styles.css",
+		"build:ts": "tsc",
+		"build": "npm run build:css && npm run build:ts && cp src/index.html dist/index.html",
+		"watch:css": "postcss src/styles.css -o dist/styles.css --watch",
+		"watch:ts": "tsc --watch",
+		"start": "live-server dist",
+		"dev": "npm run build && npm run start"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"devDependencies": {
+		"autoprefixer": "^10.4.20",
+		"live-server": "^1.2.2",
+		"postcss": "^8.4.47",
+		"postcss-cli": "^11.0.0",
+		"tailwindcss": "^3.4.14",
+		"typescript": "^5.6.3"
+	}
+}

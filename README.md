@@ -24,3 +24,25 @@ flowchart TB
     RepaintN --> End[End]
     RepaintA --> End
 ```
+
+## Delete a large amount of DOM
+
+**ReplaceChildren** can be used.
+Properly releases references to old nodes when deleting an existing child node and replacing it with a new child node
+In addition, it is possible to delete them all at once.
+
+```mermaid
+flowchart TB
+    Start[Start] --> Check{Are there elements?}
+    Check --> |No| End[End]
+    Check --> |Yes| Choose{Choose deletion method}
+    Choose --> |Remove Individually| RemoveIndividually["Delete each element individually"]
+    Choose --> |innerHTML| ClearInnerHTML["Set innerHTML empty "]
+    Choose --> |Loop Remove| RemoveWithLoop["Delete using while loop"]
+    Choose --> |replaceChildren| UseReplaceChildren["Use replaceChildren() to delete"]
+    RemoveIndividually --> ShowResult[Show Results]
+    ClearInnerHTML --> ShowResult
+    RemoveWithLoop --> ShowResult
+    UseReplaceChildren --> ShowResult
+    ShowResult --> End
+```

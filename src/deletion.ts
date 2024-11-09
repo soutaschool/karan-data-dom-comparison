@@ -1,4 +1,3 @@
-// deletion.ts
 function displayResultForDeletion(method: string, time: number) {
 	const resultDiv = document.getElementById("results");
 	if (!resultDiv) {

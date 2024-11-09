@@ -47,7 +47,11 @@ flowchart TB
     ShowResult --> End
 ```
 
-## Read a large amount content textt of DOM
+## Read a large amount content text of DOM
+
+**Map Reduce from JS API** can be used.
+Map to get only TextContent of all elements and reduce to sum strings
+This can be achieved by a combination of JS functions
 
 ```mermaid
 flowchart TB
@@ -69,4 +73,30 @@ flowchart TB
 
     DisplayNormal --> End[End]
     DisplayAdvanced --> End
+```
+
+## Update a large amount content text of DOM
+
+Update operation requires changing the properties of each element.
+Therefore, **normal functions** lead to better performance than DocumentFragment
+
+```mermaid
+flowchart TB
+    Start[Start] --> Populate[Generate Elements]
+    Populate --> ChooseMethod{Choose Update Method}
+    ChooseMethod -->|Normal Update| NormalUpdate[Execute Normal Update]
+    ChooseMethod -->|Advanced Update| AdvancedUpdate[Execute Advanced Update]
+
+    NormalUpdate --> LoopNormal[Loop Through Each Element]
+    LoopNormal --> UpdateNormal[Update Each Property]
+    UpdateNormal --> RenderNormal[Re-render]
+    RenderNormal --> End[End]
+
+    AdvancedUpdate --> CreateFragment[Create DocumentFragment]
+    CreateFragment --> LoopAdvanced[Loop Through Each Element]
+    LoopAdvanced --> MoveToFragment[Move Element to Fragment]
+    MoveToFragment --> UpdateAdvanced[Update Each Property]
+    UpdateAdvanced --> ReplaceDOM[Replace DOM Fragment]
+    ReplaceDOM --> RenderAdvanced[Re-render]
+    RenderAdvanced --> End
 ```

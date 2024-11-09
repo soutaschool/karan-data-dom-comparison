@@ -5,7 +5,7 @@
 	"scripts": {
 		"build:css": "postcss src/styles.css -o dist/styles.css",
 		"build:ts": "tsc",
-		"build": "npm run build:css && npm run build:ts && cp src/index.html dist/index.html && cp src/deletion.html dist/deletion.html && cp src/read.html dist/read.html",
+		"build": "npm run build:css && npm run build:ts && cp src/index.html dist/index.html && cp src/deletion.html dist/deletion.html && cp src/read.html dist/read.html && cp src/update.html dist/update.html",
 		"watch:css": "postcss src/styles.css -o dist/styles.css --watch",
 		"watch:ts": "tsc --watch",
 		"start": "live-server dist",

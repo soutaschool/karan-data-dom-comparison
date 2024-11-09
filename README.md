@@ -46,3 +46,27 @@ flowchart TB
     UseReplaceChildren --> ShowResult
     ShowResult --> End
 ```
+
+## Read a large amount content textt of DOM
+
+```mermaid
+flowchart TB
+    Start[Start] --> Populate[Generate Elements]
+    Populate --> ChooseMethod{Choose Read Method}
+    ChooseMethod -->|Normal Read| NormalRead[Execute Normal Read]
+    ChooseMethod -->|Advanced Read| AdvancedRead[Execute Advanced Read]
+
+    NormalRead --> SelectElementsNormal[Select All Div elements]
+    SelectElementsNormal --> LoopNormal[Loop Through Each Element]
+    LoopNormal --> ReadTextNormal[Read textContent of <div> Div each Element]
+    ReadTextNormal --> SumNormal[Calculate Total text Count]
+    SumNormal --> DisplayNormal[Display Results]
+
+    AdvancedRead --> SelectElementsAdvanced[Convert All <div> Div elements to Static Array]
+    SelectElementsAdvanced --> MapAdvanced[Batch Map All textContent]
+    MapAdvanced --> SumAdvanced[Calculate Total text Count]
+    SumAdvanced --> DisplayAdvanced[Display Results]
+
+    DisplayNormal --> End[End]
+    DisplayAdvanced --> End
+```
